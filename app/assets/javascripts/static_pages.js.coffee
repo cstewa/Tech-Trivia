@@ -7,4 +7,17 @@ $ ->
   $('#player_two').append("#{player_two}: B")
   $('#player_three').append("#{player_three}: P")
 
-  start_game = () ->
+  $('button').on('click', reveal_game)
+
+  show_question = () ->
+    $.ajax
+      url: "static_pages/home"
+      data:
+
+
+  reveal_game = () ->
+    $('#game').css("display", "block")
+    show_question
+
+
+  start_game
