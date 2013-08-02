@@ -1,0 +1,16 @@
+%h1 Welcome to hashstachetoWHAT?
+
+%button Start Game
+
+.legend
+  %h3 Your keys are:
+  #player_one
+  #player_two
+  #player_three
+
+#game
+  #question
+
+  / .answers
+  /   - @question.answers.each do |answer|
+  /     .answer{id: answer.id}
