@@ -15,3 +15,11 @@
 #game {
   display: none;
 }
+
+#player_one, #player_two, #player_three {
+  border-radius: 50%;
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}

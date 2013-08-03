@@ -12,7 +12,7 @@ $ ->
   show_question = () ->
     $.ajax
       url: "static_pages/home"
-      data:
+      # data:
 
 
   reveal_game = () ->

@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @question = Question.find(params[:question])
+    # @question = Question.find(params[:question])
   end
 end
