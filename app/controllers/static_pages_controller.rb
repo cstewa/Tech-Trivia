@@ -6,3 +6,4 @@ class StaticPagesController < ApplicationController
     @question = Question.where("id > ?", id).first
   end
 end
+
