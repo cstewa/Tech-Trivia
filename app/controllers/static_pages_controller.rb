@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-    # @question = Question.find(params[:question])
+  end
+
+  def show_game
+    @question = Question.where("id > ?", id).first
   end
 end

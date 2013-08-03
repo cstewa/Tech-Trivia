@@ -1,0 +1,7 @@
+#question{id: @question.id}
+  = @question.content
+
+.answers
+  - @question.answers.each do |answer|
+    .answer{id: answer.id}
+      = answer.content
