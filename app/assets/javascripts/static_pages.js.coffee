@@ -22,5 +22,30 @@ $ ->
       url: "static_pages/show_game"
       data: question_data
 
+
+  handle_answer = (response) ->
+    # correct_answer = () ->
+    #   $('.answer#'+response.answer)
+
+    if response.is_correct
+      correct_answer()
+    else
+      wrong_answer()
+
+  check_answer = () ->
+    answer_data =
+      answer_id: $(this).attr('id')
+
+    $.ajax
+      url: "static_pages/check_answer"
+      data: answer_data
+      success: handle_answer
+
+
   # starts the game
   $('button').on('click', show_game)
+
+  # checks to see if an answer is correct and handles the response
+  # uses $(document).on('click', '.answer') syntax because when this JS file is loaded
+  # '.answer' is not yet on the page
+  $(document).on('click', '.answer', check_answer)

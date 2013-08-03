@@ -19,3 +19,10 @@
   height: 100px;
   display: inline-block;
 }
+
+.answer {
+  background-color: blue;
+  height: 30px;
+  width: 100px;
+  margin: 20px;
+}
