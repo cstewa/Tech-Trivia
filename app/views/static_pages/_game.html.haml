@@ -2,6 +2,6 @@
   = @question.content
 
 .answers
-  - @question.answers.each do |answer|
+  - @question.answers.shuffle.each do |answer|
     .answer{id: answer.id}
       = answer.content

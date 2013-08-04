@@ -16,36 +16,40 @@ $ ->
   $('#player_three').append("#{player_three_name}: P")
 
   assign_player = () ->
-    switch event.keyCode
-      when 113
-        window.player = player_one_name
-        window.player_div = player_one_div
-        window.player_points = player_one_points
-        window.player_points_div = $('#player_one .points')
-        player_one_div.addClass('highlight')
-      when 98
-        window.player = player_two_name
-        window.player_div = player_two_div
-        window.player_points = player_two_points
-        window.player_points_div = $('#player_two .points')
-        player_two_div.addClass('highlight')
-      when 112
-        window.player = player_three_name
-        window.player_div = player_three_div
-        window.player_points = player_three_points
-        window.player_points_div = $('#player_three .points')
-        player_three_div.addClass('highlight')
+    unless window.player
+      switch event.keyCode
+        when 113
+          window.player = player_one_name
+          window.player_div = player_one_div
+          window.player_points = player_one_points
+          window.player_points_div = $('#player_one .points')
+          player_one_div.addClass('highlight')
+        when 98
+          window.player = player_two_name
+          window.player_div = player_two_div
+          window.player_points = player_two_points
+          window.player_points_div = $('#player_two .points')
+          player_two_div.addClass('highlight')
+        when 112
+          window.player = player_three_name
+          window.player_div = player_three_div
+          window.player_points = player_three_points
+          window.player_points_div = $('#player_three .points')
+          player_three_div.addClass('highlight')
 
   $(document).on('keypress', assign_player)
 
   show_game = () ->
+    # Clear out data from previous question
+    window.player = null
+    $('.correct').empty()
+
     ###
     pull in data from home.html.haml '#game' data attribute to get current question number
     when you first start the application, the data attribute has a value of 0
     every time the next question is shown, the data attribute on the '#game' div is
     incremented by 1
     ###
-    $('.correct').empty()
     question_data =
       id: $('#game').attr('data-question-id')
 
