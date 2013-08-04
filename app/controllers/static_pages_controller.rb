@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
 
     # This sends back the truthy/falsiness of the answer as json, which goes BACK to
     # static_pages.js.coffee and is picked up on success of the check_answer ajax call
-    render json: {answer: @answer.id, is_correct: @answer.is_correct}
+    render json: {answer_id: @answer.id, is_correct: @answer.is_correct}
   end
 end
 

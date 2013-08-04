@@ -7,6 +7,10 @@ $ ->
   player_two_div = $('#player_two')
   player_three_div = $('#player_three')
 
+  player_one_points = 0
+  player_two_points = 0
+  player_three_points = 0
+
   $('#player_one').append("#{player_one_name}: Q")
   $('#player_two').append("#{player_two_name}: B")
   $('#player_three').append("#{player_three_name}: P")
@@ -32,7 +36,6 @@ $ ->
     every time the next question is shown, the data attribute on the '#game' div is
     incremented by 1
     ###
-    console.log window.player
     question_data =
       id: $('#game').attr('data-question-id')
 
@@ -42,12 +45,26 @@ $ ->
 
 
   handle_answer = (response) ->
-    # correct_answer = () ->
-    #   $('.answer#'+response.answer)
+    correct_answer = () ->
+      console.log window.player
+      console.log player_one_name
+      switch window.player
+        when player_one_name
+          player_one_points++
+          console.log player_one_points
+          $('#player_one .points').empty().append(player_one_points)
+        when player_two_name
+          player_two_points++
+          $('#player_two .points').empty().append(player_two_points)
+        when player_three_name
+          player_three_points++
+          $('#player_three .points').empty().append(player_three_points)
 
-    if response.is_correct
+    if response.is_correct == true
+      console.log "got to true"
       correct_answer()
     else
+      console.log "got to false"
       wrong_answer()
 
   check_answer = () ->
