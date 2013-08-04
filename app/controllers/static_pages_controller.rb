@@ -8,6 +8,14 @@ class StaticPagesController < ApplicationController
     # the ('id > ?, id') syntax is just another way of querying SQL
     ## the params[:id] just replaces the question mark
     @question = Question.where("id > ?", params[:id]).first
+
+    respond_to do |format|
+      if @question
+        format.js
+      else
+        format.js {render action: "end_game"}
+      end
+    end
   end
 
   def check_answer
@@ -21,3 +29,5 @@ class StaticPagesController < ApplicationController
   end
 end
 
+def end_game
+end

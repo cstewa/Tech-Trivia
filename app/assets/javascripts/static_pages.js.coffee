@@ -37,9 +37,9 @@ $ ->
           window.player_points_div = $('#player_three .points')
           player_three_div.addClass('highlight')
 
-  $(document).on('keypress', assign_player)
-
   show_game = () ->
+    $(document).on('keypress', assign_player)
+
     # Clear out data from previous question
     window.player = null
     $('.correct').empty()
