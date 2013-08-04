@@ -12,6 +12,21 @@
  *= require_tree .
  */
 
-#game {
-  display: none;
+#player_one, #player_two, #player_three {
+  border-radius: 50%;
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.answer {
+  background-color: blue;
+  height: 30px;
+  width: 100px;
+  margin: 20px;
+}
+
+.highlight {
+  border: 5px solid yellow;
 }

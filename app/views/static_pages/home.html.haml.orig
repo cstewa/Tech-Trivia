@@ -5,18 +5,13 @@
 .legend
   %h3 Your keys are:
   #player_one
-    .points
   #player_two
-    .points
   #player_three
-    .points
 
-/ This div just holds a message saying if the answer was correct or not
-.correct
-
-
+<<<<<<< HEAD
+=======
 / / The data-question-id is picked up by the static_pages.js.coffee
 / and put into the question_data variable (which is an object/hash)
-#game{:data => {:question_id => 0}}
 
-/ The actual game is inserted as a partial inside this div
+>>>>>>> a0644c093ce77ac1470888abea0d4e840e607598
+#game{:data => {:question_id => 0}}
