@@ -9,13 +9,13 @@ class StaticPagesController < ApplicationController
     ## the params[:id] just replaces the question mark
     @question = Question.where("id > ?", params[:id]).first
 
-    respond_to do |format|
-      if @question
-        format.js
-      else
-        format.js {render action: "end_game"}
-      end
-    end
+    # respond_to do |format|
+    #   if @question
+    #     format.js
+    #   else
+    #     format.js {render action: "end_game"}
+    #   end
+    # end
   end
 
   def check_answer
