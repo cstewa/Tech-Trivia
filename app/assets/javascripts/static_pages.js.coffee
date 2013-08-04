@@ -101,6 +101,10 @@ $ ->
   # starts the game
   $('button').on('click', show_game)
 
+  mixpanel.track "Start Game",
+    button: "#button"
+
+
   # checks to see if an answer is correct and handles the response
   # uses $(document).on('click', '.answer') syntax because when this JS file is loaded
   # '.answer' is not yet on the page
