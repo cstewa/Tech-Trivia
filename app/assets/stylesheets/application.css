@@ -10,11 +10,12 @@
  *
  *= require_self
  *= require_tree .
+ *= require animate
  */
 
 #player_one, #player_two, #player_three {
-  border-radius: 50%;
-  background-color: purple;
+  border-radius: 10%;
+  background-color: #3498db;
   width: 100px;
   height: 100px;
   display: inline-block;
@@ -29,4 +30,42 @@
 
 .highlight {
   border: 5px solid yellow;
+}
+
+button{
+  color:black;
+  font-weight: bold;
+  background-color: #3498db;
+  border:1px solid;
+  border-radius: 5px;
+  border-color:#34495e;
+  width:120px;
+  padding: 8px 10px 10px 10px;
+  box-shadow: 5px 5px 5px #34495e;
+  font-family: 'Finger Paint', cursive;
+}
+
+#game-title {
+  padding: center;
+  font-size: 40px;
+}
+
+#biggest-div {
+  margin: auto;
+  width: 500px;
+  border: solid;
+  background-color: #95a5a6;
+  height: 600px;
+  border-radius: 10px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+body {
+  background-image: url(/assets/hash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Finger Paint', cursive;
+  color: #34495e;
 }

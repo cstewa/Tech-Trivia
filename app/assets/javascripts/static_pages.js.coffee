@@ -78,6 +78,7 @@ $ ->
 
     wrong_answer = () ->
       $('.correct').append("Wrong answer :(")
+      $('.answer').addClass('animated shake');
       window.player_div.removeClass('highlight')
       setTimeout(show_game, 2000)
 
@@ -101,8 +102,8 @@ $ ->
   # starts the game
   $('button').on('click', show_game)
 
-  mixpanel.track "Start Game",
-    button: "#button"
+  mixpanel.track "Check answer",
+    button: "show_game"
 
 
   # checks to see if an answer is correct and handles the response
