@@ -38,11 +38,16 @@ $ ->
           player_three_div.addClass('highlight')
 
   show_game = () ->
-    $(document).on('keypress', assign_player)
 
     # Clear out data from previous question
     window.player = null
+    window.player_div = null
+    window.player_points = null
+    window.player_points_div = null
+
     $('.correct').empty()
+
+    $(document).on('keypress', assign_player)
 
     ###
     pull in data from home.html.haml '#game' data attribute to get current question number
