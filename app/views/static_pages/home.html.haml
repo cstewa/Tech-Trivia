@@ -11,8 +11,12 @@
   #player_three
     .points
 
+/ This div just holds a message saying if the answer was correct or not
 .correct
+
+
 / / The data-question-id is picked up by the static_pages.js.coffee
 / and put into the question_data variable (which is an object/hash)
-
 #game{:data => {:question_id => 0}}
+
+/ The actual game is inserted as a partial inside this div

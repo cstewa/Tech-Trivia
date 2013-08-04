@@ -16,7 +16,10 @@ $ ->
   $('#player_three').append("#{player_three_name}: P")
 
   assign_player = () ->
+    # unless there is already a player (e.g., someone else pressed their 'buzzer' first)
     unless window.player
+
+    # assign a player
       switch event.keyCode
         when 113
           window.player = player_one_name
@@ -39,7 +42,7 @@ $ ->
 
   show_game = () ->
 
-    # Clear out data from previous question
+    # Clear out player data from previous question
     window.player = null
     window.player_div = null
     window.player_points = null
@@ -47,6 +50,7 @@ $ ->
 
     $('.correct').empty()
 
+    # Assign a player when someone presses their key
     $(document).on('keypress', assign_player)
 
     ###
@@ -77,12 +81,11 @@ $ ->
       window.player_div.removeClass('highlight')
       setTimeout(show_game, 2000)
 
-
+    # if the response sent back in the success callback on the check_answer .ajax call
+    # is true, then do correct_answer, else do wrong_answer
     if response.is_correct == true
-      console.log "got to true"
       correct_answer()
     else
-      console.log "got to false"
       wrong_answer()
 
   check_answer = () ->
