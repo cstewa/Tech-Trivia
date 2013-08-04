@@ -19,12 +19,21 @@ $ ->
     switch event.keyCode
       when 113
         window.player = player_one_name
+        window.player_div = player_one_div
+        window.player_points = player_one_points
+        window.player_points_div = $('#player_one .points')
         player_one_div.addClass('highlight')
       when 98
         window.player = player_two_name
+        window.player_div = player_two_div
+        window.player_points = player_two_points
+        window.player_points_div = $('#player_two .points')
         player_two_div.addClass('highlight')
       when 112
         window.player = player_three_name
+        window.player_div = player_three_div
+        window.player_points = player_three_points
+        window.player_points_div = $('#player_three .points')
         player_three_div.addClass('highlight')
 
   $(document).on('keypress', assign_player)
@@ -36,6 +45,7 @@ $ ->
     every time the next question is shown, the data attribute on the '#game' div is
     incremented by 1
     ###
+    $('.correct').empty()
     question_data =
       id: $('#game').attr('data-question-id')
 
@@ -46,19 +56,18 @@ $ ->
 
   handle_answer = (response) ->
     correct_answer = () ->
-      console.log window.player
-      console.log player_one_name
-      switch window.player
-        when player_one_name
-          player_one_points++
-          console.log player_one_points
-          $('#player_one .points').empty().append(player_one_points)
-        when player_two_name
-          player_two_points++
-          $('#player_two .points').empty().append(player_two_points)
-        when player_three_name
-          player_three_points++
-          $('#player_three .points').empty().append(player_three_points)
+      window.player_points++
+      window.player_points_div.empty().append(window.player_points)
+      window.player_div.removeClass('highlight')
+
+      $('.correct').append("Correct!")
+      setTimeout(show_game, 2000)
+
+    wrong_answer = () ->
+      $('.correct').append("Wrong answer :(")
+      window.player_div.removeClass('highlight')
+      setTimeout(show_game, 2000)
+
 
     if response.is_correct == true
       console.log "got to true"
