@@ -16,20 +16,28 @@
 #player_one, #player_two, #player_three {
   border-radius: 10%;
   background-color: #3498db;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 60px;
   display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px #34495e;
 }
 
 .answer {
-  background-color: blue;
   height: 30px;
   width: 100px;
   margin: 20px;
 }
 
+#game{
+  margin-top: 20px;
+  color: #2c3e50;
+  font-size: 20px;
+}
+
 .highlight {
-  border: 5px solid yellow;
+  border: 5px solid #ecf0f1;
 }
 
 button{
@@ -50,17 +58,37 @@ button{
   font-size: 40px;
 }
 
+.correct {
+  margin-top: 5px;
+}
+
 #biggest-div {
   margin: auto;
-  width: 500px;
+  width: 700px;
   border: solid;
   background-color: #95a5a6;
-  height: 600px;
+  height: 100%;
   border-radius: 10px;
   margin-top: 50px;
   text-align: center;
 }
 
+.answers {
+  margin-top: 15px;
+  margin: auto;
+  width: 350px;
+  text-align: left;
+}
+
+.answer {
+  width: 100%;
+  border-radius: 5px;
+  padding-left: 5px;
+  background-color: #34495e;
+  color: #7f8c8d;
+  box-shadow: 5px 5px 5px #34495e;
+  height: 100%;
+}
 
 body {
   background-image: url(/assets/hash.png);

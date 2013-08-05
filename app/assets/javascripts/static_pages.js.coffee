@@ -71,6 +71,7 @@ $ ->
     correct_answer = () ->
       window.player_points++
       window.player_points_div.empty().append(window.player_points)
+      $('.answer').addClass('animated rotateOutUpRight');
       window.player_div.removeClass('highlight')
 
       $('.correct').append("Correct!")
